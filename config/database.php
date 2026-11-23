@@ -43,6 +43,11 @@ return [
             'synchronous' => null,
             'transaction_mode' => 'DEFERRED',
         ],
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'dsn' => env('DB_URI'),
+            'database' => env('DB_DATABASE', 'katalog_produk_db'),
+        ],
 
         'mysql' => [
             'driver' => 'mysql',
@@ -165,7 +170,8 @@ return [
             'backoff_base' => env('REDIS_BACKOFF_BASE', 100),
             'backoff_cap' => env('REDIS_BACKOFF_CAP', 1000),
         ],
-
+    ],
+        
         'cache' => [
             'url' => env('REDIS_URL'),
             'host' => env('REDIS_HOST', '127.0.0.1'),
@@ -178,7 +184,5 @@ return [
             'backoff_base' => env('REDIS_BACKOFF_BASE', 100),
             'backoff_cap' => env('REDIS_BACKOFF_CAP', 1000),
         ],
-
-    ],
 
 ];
